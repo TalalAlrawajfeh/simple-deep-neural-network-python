@@ -65,10 +65,6 @@ class NeuralNetwork(object):
             self.weights = [w - learning_rate / len(batch) * nw for w, nw in zip(self.weights, nabla_w)]
             self.biases = [b - learning_rate / len(batch) * nb for b, nb in zip(self.biases, nabla_b)]
 
-    def evaluate(self, testing_data):
-        testing_results = [(np.argmax(self.feed_forward(x)), np.argmax(y)) for (x, y) in testing_data]
-        return sum(int(x == y) for (x, y) in testing_results)
-
 
 def sigmoid(number):
     return 1.0 / (1.0 + np.exp(-number))
