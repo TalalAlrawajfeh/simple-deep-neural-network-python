@@ -22,6 +22,7 @@ DEFAULT_NUMBER_OF_ROUNDS = 10
 
 
 def main():
+    np.seterr(all='ignore')
     neurons_per_layer = [mnist_data_reader.IMAGE_SIZE, 100, 10]
     network = nueral_network.NeuralNetwork(neurons_per_layer)
 
