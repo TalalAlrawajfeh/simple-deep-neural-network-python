@@ -10,11 +10,11 @@ import numpy as np
 
 
 class NeuralNetwork(object):
-    def __init__(self, neurons_per_layer):
-        self.neurons_per_layer = neurons_per_layer
-        self.number_of_layers = len(neurons_per_layer)
-        self.weights = [np.random.randn(x, y) for x, y in zip(neurons_per_layer[1:], neurons_per_layer[:-1])]
-        self.biases = [np.random.randn(x, 1) for x in neurons_per_layer[1:]]
+    def __init__(self, nodes_per_layer):
+        self.neurons_per_layer = nodes_per_layer
+        self.number_of_layers = len(nodes_per_layer)
+        self.weights = [np.random.randn(x, y) for x, y in zip(nodes_per_layer[1:], nodes_per_layer[:-1])]
+        self.biases = [np.random.randn(x, 1) for x in nodes_per_layer[1:]]
 
     def feed_forward(self, input_vector):
         output = input_vector
